@@ -5,6 +5,9 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PostController;
+use App\Http\Controllers\ApiController;
+use App\Http\Controllers\ServiceController;
 
 /*
 |--------------------------------------------------------------------------
@@ -52,6 +55,13 @@ Route::prefix('tin-tuc')->group(function () {
         ->name('news.category');
 });
 
+Route::prefix('dich-vu')->group(function () {
+    Route::get('{serviceSlug}-{service}.html', [ServiceController::class, 'detail'])
+        ->where('serviceSlug', '[\S]+')
+        ->where('service', '[0-9]+')
+        ->name('service.detail');
+});
+
 Route::prefix('lien-he')->group(function () {
     Route::get('', [ContactController::class, 'show'])
         ->name('contact.show');
@@ -59,10 +69,10 @@ Route::prefix('lien-he')->group(function () {
         ->name('contact.store');
 });
 
-Route::get('/test', [\App\Http\Controllers\PostController::class, 'index']);
+Route::get('/test', [PostController::class, 'index']);
 
 /* API */
-Route::get('api/getProductByCategory/{id}', [\App\Http\Controllers\ApiController::class, 'getProductByCategory']);
+Route::get('api/getProductByCategory/{id}', [ApiController::class, 'getProductByCategory']);
 
 Route::group([
     'prefix' => config('admin.route.prefix') . '/laravel-filemanager',

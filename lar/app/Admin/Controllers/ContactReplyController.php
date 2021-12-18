@@ -4,12 +4,13 @@ namespace App\Admin\Controllers;
 
 use App\Enums\ContactStatusEnum;
 use App\Models\Contact;
+use App\Models\ContactReplay;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
 use Encore\Admin\Show;
 
-class ContactController extends AdminController
+class ContactReplyController extends AdminController
 {
     /**
      * Title for current resource.
@@ -42,10 +43,6 @@ class ContactController extends AdminController
         $grid->column('phone', __('Điện thoại'));
         $grid->column('status', __('Trạng thái'))->editable('select', $this->getStatusLabels());
         $grid->column('mail', __('Email'));
-        $grid->column('replyLink', __('Trả lời'))->display(function () {
-            $url = route('admin.contact-reply.create') . '?ct=' . $this->id;
-            return "<a href='{$url}'>Mail</a>";
-        });;
         $grid->column('content', __('Nội dung'));
         $grid->column('created_at', __('Ngày gửi'));
 
@@ -90,9 +87,13 @@ class ContactController extends AdminController
      */
     protected function form()
     {
-        $form = new Form(new Contact());
+        $form = new Form(new ContactReplay());
 
-        $form->hidden('status');
+        $ct = request('ct');
+        $contact = Contact::findOrFail($ct);
+        $form->display('contact.name')->value($contact->name);
+        $form->display('contact.email')->value($contact->mail);
+        $form->ckeditor('content', 'Nội dung mail')->value($contact->mail);
 
         return $form;
     }

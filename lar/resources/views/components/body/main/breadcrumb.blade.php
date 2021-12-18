@@ -8,7 +8,7 @@
                             <ol class="breadcrumb">
                                 @foreach($breadcrumbs as $key => $breadcrumb)
                                     <li class="{{ $active($key) }}">
-                                        <a href="{{ $getUrl($breadcrumb->getUrl()) }}"></a>{{ $breadcrumb->getName() }}
+                                        {!! $getTitle($key, $breadcrumb) !!}
                                     </li>
                                 @endforeach
                             </ol>

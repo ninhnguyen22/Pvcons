@@ -68,35 +68,35 @@
                             rules: {
                                 "name": {
                                     required: true,
+                                    maxLength: 100,
                                 },
                                 "phone": {
                                     required: function (element) {
                                         return $("#f_email").val().length <= 0;
                                     },
-                                },
-                                "title": {
-                                    required: true,
+                                    maxLength: 50,
                                 },
                                 "content": {
                                     required: true,
+                                    maxLength: 100,
                                 },
                                 "mail": {
                                     // required: true,
-                                    email: true
+                                    email: true,
+                                    maxLength: 100,
                                 },
                             },
                             messages: {
                                 name: {
                                     required: 'Vui lòng nhập tên',
+                                    maxLength: 'Vui lòng nhập ít hơn 100 kí tự',
                                 },
                                 phone: {
                                     required: 'Vui lòng nhập tên số điện thoại hoặc email',
                                 },
-                                title: {
-                                    required: 'Vui lòng nhập tên tiêu đề',
-                                },
                                 content: {
                                     required: 'Vui lòng nhập nội dung liên hệ',
+                                    maxLength: 'Vui lòng nhập ít hơn 1000 kí tự',
                                 },
                                 email: {
                                     required: 'Vui lòng nhập email',
@@ -114,7 +114,8 @@
                                     nh_functions.showTooltipError(error.element, error.message);
                                 });
                             },
-                        });</script>
+                        });
+                    </script>
                 </div>
             </div>
         </div>

@@ -19,6 +19,7 @@
  */
 
 Encore\Admin\Form::forget(['map', 'editor']);
+\Encore\Admin\Admin::js(asset('https://cdn.jsdelivr.net/npm/chart.js@3.6.2/dist/chart.min.js'));
 \Encore\Admin\Admin::css(asset('vendor/laravel-filemanager/css/cropper.min.css'));
 \Encore\Admin\Admin::css(asset('vendor/laravel-filemanager/css/dropzone.min.css'));
 \Encore\Admin\Admin::css(asset('vendor/laravel-filemanager/css/mime-icons.min.css'));

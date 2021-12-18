@@ -44,7 +44,8 @@
                                             <div class="item-blogs item-blogs-ft clearfix">
                                                 <div class="info info-ft">
                                                     <h2 class="title-blogs-item">
-                                                        <a href="/company-introduce/tin-tuc-ve-noi-that.html">{{ $newsItem->title }}</a>
+                                                        <a href="{{ route('news.detail',
+                                                        ['news' => $newsItem->id, 'newsSlug' => Str::slug($newsItem->name)]) }}">{{ $newsItem->name }}</a>
                                                     </h2>
                                                     <p class="more-blogs">
                                                         <span class="time">

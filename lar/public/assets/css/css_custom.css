@@ -24,7 +24,7 @@ body{
   transition: position 0.4s;
   -webkit-animation: affix-menu 1s;
   animation: affix-menu 1s;
-  background: #0f1526;
+  background: #24631d;
 }
 
 @-webkit-keyframes affix-menu {
@@ -71,7 +71,8 @@ body{
     font-weight: 700;
 }
 #header{
-  background: #192442;
+  /*background: #32703e;*/
+  background: #32703e;
 }
 .header-top {
   padding: 15px 0px;
@@ -515,7 +516,7 @@ body{
     margin-top: 15px;
 }
 #footer{
-  background: #192442;
+  background: #32703e;
   color: #cccccc;
   padding-top: 30px;
 }
@@ -782,4 +783,8 @@ body{
     width: 100%;
     height: auto !important;
   }
+}
+
+.carousel-inner img {
+    margin: 0 auto;
 }

@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ContactRequest;
 use App\Repositories\Contracts\BreadcrumbRepositoryInterface;
 use App\Repositories\Contracts\CompanyProfileRepositoryInterface;
 use App\Repositories\Contracts\ContactRepositoryInterface;
 use App\Repositories\Contracts\FrameRepositoryInterface;
-use Illuminate\Http\Request;
 
 class ContactController extends BaseController
 {
@@ -48,7 +48,7 @@ class ContactController extends BaseController
         return view('contact', compact('companyName', 'companyImg', 'map'));
     }
 
-    public function store(Request $request)
+    public function store(ContactRequest $request)
     {
         if ($this->contactRepository->saveContact($request->all())) {
             return redirect()->route('contact.show')->with('flash', [

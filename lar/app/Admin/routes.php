@@ -25,4 +25,5 @@ Route::group([
     $router->resource('/partner', 'PartnerController');
     $router->resource('/home-section', 'HomeSectionController');
     $router->resource('/contact', 'ContactController');
+    $router->resource('/contact-reply', 'ContactReplyController');
 });

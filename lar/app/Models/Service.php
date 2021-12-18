@@ -27,4 +27,9 @@ class Service extends Model
         return $this->show()
             ->orderBy('priority', 'ASC');
     }
+
+    public function getShow($id)
+    {
+        return $this->show()->where('id', $id)->first();
+    }
 }

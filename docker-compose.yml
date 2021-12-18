@@ -1,17 +1,16 @@
 version: '3'
 services:
-  mysql_lar:
+  mysql:
     image: mysql:8.0.19
-    container_name: mysql_lar
+    container_name: mysql
     volumes:
       - ./mysql/data:/var/lib/mysql
-      - ./mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf
     command: --default-authentication-plugin=mysql_native_password --sql_mode="no_engine_substitution"
     environment:
       MYSQL_ROOT_PASSWORD: root
       MYSQL_DATABASE: nin
-      MYSQL_USER: root
-      MYSQL_PASSWORD: root
+      MYSQL_USER: nin
+      MYSQL_PASSWORD: nin
     ports:
       - "3307:3306"
   # cent_os+php+php-fpm+app本体

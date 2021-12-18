@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-sm-12 col-xs-12">
-                <div class="item_block" data-action="news/NewsBlock/newsBlock/68" data-method="get">
+                <div class="item_block">
                     <div class="list-tab-project box-product-style2">
                         <div class="tabs-block position-relative">
                             <div class="tab-product clearfix">

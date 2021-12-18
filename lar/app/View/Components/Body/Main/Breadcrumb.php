@@ -20,9 +20,12 @@ class Breadcrumb extends Component
         $this->breadcrumbs = $breadcrumbRepository->getBreadcrumbs();
     }
 
-    public function getUrl($url)
+    public function getTitle($key, $breadcrumb)
     {
-        return $url ?: '/';
+        if (($key + 1) === count($this->breadcrumbs)) {
+            return '<span>' . $breadcrumb->getName() . '</span>';
+        }
+        return '<a href="' . $breadcrumb->getUrl() . '">' . $breadcrumb->getName() . '</a>';
     }
 
     public function active($key)

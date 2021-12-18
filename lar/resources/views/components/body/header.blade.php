@@ -2,7 +2,7 @@
     <div id="header-row-8" class="nh-row header-top ">
         <div class="container">
             <div class="row">
-                <div class="col-sm-6 col-xs-6">
+                <div class="col-sm-6 col-xs-12">
                     <div class="hottline-email">
                         <ul>
                             <li><i class="fa fa-phone"></i> Hotline: {{ $hotLine }}</li>

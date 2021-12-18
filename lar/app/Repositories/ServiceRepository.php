@@ -21,4 +21,9 @@ class ServiceRepository extends BaseRepository implements ServiceRepositoryInter
         return $this->service->getShowServices()->get();
     }
 
+    public function getDetail($id)
+    {
+        return $this->service->getShow($id);
+    }
+
 }

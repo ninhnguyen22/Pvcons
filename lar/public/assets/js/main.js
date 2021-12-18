@@ -15,77 +15,77 @@ $(document).ready(function () {
         $(this).toggleClass('open');
         $(".cont-toggle-nav").toggleClass('open');
 		$('body').toggleClass('ovl-hidden');
-		
+
     });
 
 	$('body').on('click', '.btn-view-nav-left', function (e) {
         $(this).toggleClass('open');
         $(this).parent().parent().find(".block-nav-left-mobile").slideToggle(300)
-		
-		
+
+
     });
     $('body').on('click', '.btn-toggle-cont-box-left', function (e) {
         $(this).toggleClass('open');
         $(this).parent().parent().parent().find(".content-box-left").slideToggle(300)
-        
-        
+
+
     });
-    
+
     $('body').on('click', '.btn-hide-toggle-sub-menu', function (e) {
         $(this).toggleClass('open');
         $(this).next().slideToggle(300)
-        
-        
+
+
     });
 	$('body').on('click', '.btn-view-list', function (e) {
-        
+
         $(".list-item").addClass('view-list');
 		 $(".list-item-blogs").addClass('view-list');
-        
-        
+
+
     });
 	$('body').on('click', '.btn-view-gird', function (e) {
-        
+
         $(".list-item").removeClass('view-list');
 		$(".list-item-blogs").removeClass('view-list');
-        
-        
+
+
     });
 	$('body').on('click', '.view-style .btn-view', function (e) {
-        
+
         $(".view-style .btn-view").removeClass('active');
 		 $(this).addClass('active');
-        
-        
+
+
     });
   $('body').on('click', '.thub-image .item', function (e) {
-        
+
         $(".thub-image .item").removeClass('active');
      $(this).addClass('active');
-        
-        
+
+
     });
-  
+
   $('body').on('click', '.setting-theme a', function (e) {
-        
+
         $(".setting-theme a").removeClass('active');
      $(this).addClass('active');
-        
-        
+
+
     });
   $('body').on('click', '.menu-active', function (e) {
         $(this).toggleClass('open');
         $("#Nav-mobile .nav_desktop ul").slideToggle(300)
-    
-    
+
+
     });
   $('body').on('click', '.btn-show-search', function (e) {
         $(this).toggleClass('open');
         $(".box-search-mobile .box-search").slideToggle(300)
-    
-    
+
+
     });
-	
+
 
 });
 
@@ -98,7 +98,7 @@ jQuery(function ($) {
         extraWidth: 1
     }).superfish({onBeforeShow: function() {
    if($(this).parents("ul").length > 1){
-      var w = $(window).width();  
+      var w = $(window).width();
       var ul_offset = $(this).parents("ul").offset();
       var ul_width = $(this).parents("ul").outerWidth();
       ul_width = ul_width + 50;
@@ -120,21 +120,21 @@ var wow = new WOW({
     	mobile:false       // trigger animations on mobile devices (default is true)
   	});
 	wow.init();
-	
-	
+
+
 // css menu tabs bo sung
 
 (function( $ ) {
-            
+
     function storeTabs($tabs, $destination) {
         // measure width
         $tabs.each(function() {
             var width = $(this).outerWidth(true);
-            $(this).data('width', width);          
+            $(this).data('width', width);
         });
         $tabs.prependTo($destination);
     }
-            
+
     function makeTabsResponsive($element) {
 
         var $tabs = $element.find('li');
@@ -144,7 +144,7 @@ var wow = new WOW({
         var tabsHeight = $element.outerHeight();
 
         if(tabsHeight > individualTabHeight) {
-                    
+
             // get y pos of first tab
             var firstTabPos = $firstTab.offset();
 
@@ -158,7 +158,7 @@ var wow = new WOW({
                 if(thisTabPos.top > firstTabPos.top) {
 
                     var $dropdown = $element.find('.responsivetabs-more');
-                            
+
                     if(!$dropdown.length) {
                         var dropdownMarkup = '<li class="dropdown responsivetabs-more">'
                         + '<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon  icon-menu"></i></a>'
@@ -166,20 +166,20 @@ var wow = new WOW({
                         + '</ul>';
                         $dropdown = $(dropdownMarkup);
                         $element.append($dropdown);
-                                
+
                     }
-                            
+
                     var $previousTab = $thisTab.prev();
                     var $followingTabs = $thisTab.nextAll().not('.dropdown');
 
                     var $destination = $('.dropdown-menu', $dropdown);
-                            
+
                     if(!$thisTab.hasClass('dropdown')) {
                         storeTabs($followingTabs, $destination);
                         storeTabs($thisTab, $destination);
                     }
                     storeTabs($previousTab, $destination);
-                            
+
                     return;
 
                 }
@@ -187,9 +187,9 @@ var wow = new WOW({
             });
 
         } else {
-                
 
-                
+
+
             // check if enough space to move a menu item back out of "..."
 
 
@@ -207,14 +207,14 @@ var wow = new WOW({
             xPxAvailable = parentWidth - tabSetWidth;
 
 
-                    
+
             $element.find('.dropdown-menu li').each(function() {
                 if($(this).data('width') <= xPxAvailable) {
-                    $(this).insertBefore($element.find('.responsivetabs-more')); 
+                    $(this).insertBefore($element.find('.responsivetabs-more'));
                     xPxAvailable -= $(this).data('width');
                 } else {
                     return false;
-                } 
+                }
             });
 
             // if no menu items left, remove "..."
@@ -223,24 +223,24 @@ var wow = new WOW({
             }
         }
 
-   
+
     }
-  
-            
+
+
     $.fn.responsiveTabs = function() {
-                
+
         this.each(function() {
             var tabs = $(this);
-            makeTabsResponsive(tabs); 
+            makeTabsResponsive(tabs);
             $(window).resize(function() {
-                makeTabsResponsive(tabs); 
-            });                    
+                makeTabsResponsive(tabs);
+            });
         });
-                
+
         return this;
-                
+
     };
-            
+
 })( jQuery );
 $(function() {
             $('.nav_title').responsiveTabs();

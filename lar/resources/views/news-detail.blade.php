@@ -5,7 +5,7 @@
             <div class="row">
 
                 <x-body.main.category
-                    title="Danh Mục Dự Án"
+                    title="Danh Mục Tin Tức"
                     :categories="$categories"
                     :category="$category"/>
 
@@ -25,7 +25,7 @@
 
                         @if ($productRelate)
                             <div class="box-detail-post link-lien-quan">
-                                <a href="{{ route('product.detail', ['product' => $productRelate->id, 'productSlug' => Str::slug($productRelate->name)]) }}"
+                                <a href="{{ route('news.detail', ['news' => $productRelate->id, 'newsSlug' => Str::slug($productRelate->name)]) }}"
                                    class="item-link-lienquan">
                                     <i class="fa fa-angle-double-right" aria-hidden="true"></i>
                                     {{ $productRelate->name }}

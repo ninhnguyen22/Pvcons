@@ -15,14 +15,14 @@ class BaseController extends Controller
     protected function categoryBreadcrumbs($category)
     {
         $this->breadcrumbRepository
-            ->setBreadcrumbs('Trang Chủ')
+            ->setBreadcrumbs('Trang Chủ', '/')
             ->setBreadcrumbs($category['name'], $category['url']);
     }
 
     protected function detailBreadcrumbs($category, $detail)
     {
         $this->breadcrumbRepository
-            ->setBreadcrumbs('Trang Chủ')
+            ->setBreadcrumbs('Trang Chủ', '/')
             ->setBreadcrumbs($category['name'], $category['url'])
             ->setBreadcrumbs($detail['name'], $detail['url']);
     }

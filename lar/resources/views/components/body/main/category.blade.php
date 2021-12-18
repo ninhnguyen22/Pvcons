@@ -1,5 +1,5 @@
 <div class="col-sm-3 col-xs-12">
-    <div class="item_block" data-action="navigation/Navigation/category/16" data-method="get">
+    <div class="item_block" data-action="" data-method="get">
         <div class="col_left">
             <div class=" box-left box ">
                 <div class="title_style">
@@ -15,7 +15,6 @@
                                 @foreach($categories as $category)
                                     <li class="border-bottom {{ $active($category) }}">
                                         <a href="{{ $category->productUrl }}" class="">{{ $category->name }}</a>
-{{--                                        <a href="/du-an/{{ $category->url }}" class="">{{ $category->name }}</a>--}}
                                     </li>
                                 @endforeach
                             </ul>

@@ -5,7 +5,7 @@
             <div class="row">
 
                 <x-body.main.category
-                    title="Danh Mục Dự Án"
+                    title="Danh Mục Tin Tức"
                     :categories="$categories"
                     :category="$category"/>
 
@@ -43,7 +43,7 @@
                                     <div class="border item-blogs clearfix">
                                         <div class="img-blogs">
                                             <a class="img-news"
-                                               href="{{ route('product.detail', ['product' => $product->id, 'productSlug' => Str::slug($product->name)]) }}">
+                                               href="{{ route('news.detail', ['news' => $product->id, 'newsSlug' => Str::slug($product->name)]) }}">
                                                 <img class="lazyload"
                                                      data-src="{{ Storage::disk('admin')->url($product->image) }}"
                                                      src="{{ Storage::disk('admin')->url($product->image) }}">
@@ -51,7 +51,7 @@
                                         </div>
                                         <div class="info">
                                             <h2 class="title-blogs-item">
-                                                <a href="{{ route('product.detail', ['productSlug' => Str::slug($product->name), 'product' => $product->id]) }}">{{ $product->name }}</a>
+                                                <a href="{{ route('news.detail', ['newsSlug' => Str::slug($product->name), 'news' => $product->id]) }}">{{ $product->name }}</a>
                                             </h2>
                                             <p class="more-blogs">
                                                 <span class="time"> <i class="fa fa-clock-o" aria-hidden="true"></i> {{ $product->updated_at->format('h:i - d/m/Y') }} </span>

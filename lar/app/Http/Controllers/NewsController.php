@@ -35,9 +35,8 @@ class NewsController extends BaseController
 
         $categories = $this->newsRepository->getNewsCategories();
         $products = $this->newsRepository->getNewsPagination();
-        $categoryTitle = 'Danh Mục Tin Tức';
 
-        return view('product-category', compact('category', 'categories', 'products', 'categoryTitle'));
+        return view('news-category', compact('category', 'categories', 'products'));
     }
 
     public function category($categorySlug, $categoryId)
@@ -54,9 +53,8 @@ class NewsController extends BaseController
 
         $categories = $this->newsRepository->getNewsCategories();
         $products = $this->newsRepository->getNewsPaginationByCategory($category->id);
-        $categoryTitle = 'Danh Mục Tin Tức';
 
-        return view('product-category', compact('category', 'categories', 'products', 'categoryTitle'));
+        return view('news-category', compact('category', 'categories', 'products'));
     }
 
     public function detail($newsSlug, $newsId)
@@ -76,10 +74,8 @@ class NewsController extends BaseController
 
         $categories = $this->newsRepository->getNewsCategories();
         $productRelate = $this->newsRepository->getShowRelate($category->id, $newsId);
-        $categoryTitle = 'Danh Mục Tin Tức';
 
-        return view('product-detail', compact('product', 'categories', 'category', 'productRelate', 'categoryTitle'));
+        return view('news-detail', compact('product', 'categories', 'category', 'productRelate'));
     }
-
 
 }

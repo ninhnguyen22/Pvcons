@@ -35,9 +35,8 @@ class ProductController extends BaseController
 
         $categories = $this->categoryRepository->getForProduct();
         $products = $this->productRepository->getPagination();
-        $categoryTitle = 'Danh Mục Dự Án';
 
-        return view('product-category', compact('category', 'categories', 'products', 'categoryTitle'));
+        return view('product-category', compact('category', 'categories', 'products'));
     }
 
     public function category($productCategory)
@@ -51,9 +50,8 @@ class ProductController extends BaseController
 
         $categories = $this->categoryRepository->getForProduct();
         $products = $this->productRepository->getPaginationByCategory($category->id);
-        $categoryTitle = 'Danh Mục Dự Án';
 
-        return view('product-category', compact('category', 'categories', 'products', 'categoryTitle'));
+        return view('product-category', compact('category', 'categories', 'products'));
     }
 
     public function detail($productSlug, $productId)
@@ -67,15 +65,13 @@ class ProductController extends BaseController
             ['name' => $category->name, 'url' => route('product.category', [$category->url])],
             [
                 'name' => $product->name,
-                'url' => route('product.detail',
-                    ['product' => $product->id, 'productSlug' => Str::slug($product->name)])
+                'url' => ''
             ]);
 
         $categories = $this->categoryRepository->getForProduct();
         $productRelate = $this->productRepository->getRelate($category->id, $productId);
-        $categoryTitle = 'Danh Mục Dự Án';
 
-        return view('product-detail', compact('product', 'categories', 'category', 'productRelate', 'categoryTitle'));
+        return view('product-detail', compact('product', 'categories', 'category', 'productRelate'));
     }
 
 

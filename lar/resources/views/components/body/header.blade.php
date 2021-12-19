@@ -38,7 +38,7 @@
                 <div class="col-sm-2 col-xs-6">
                     <div class="navbar-header">
                         <a class="logo" href="/">
-                            <img src="{{ asset('/assets/images/logo.png') }}" alt="Logo"/>
+                            <img src="{{ asset('/assets/images/logo.png') }}?v=20211219" alt="Logo"/>
                         </a>
                     </div>
                 </div>

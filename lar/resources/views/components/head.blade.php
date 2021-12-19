@@ -1,10 +1,13 @@
-{{--<link href="/uploads/plugin/setting/3/1564449448-1364457214-n-i-th-t.png" type="image/x-icon" rel="icon"/>
-<link href="/uploads/plugin/setting/3/1564449448-1364457214-n-i-th-t.png" type="image/x-icon" rel="shortcut icon"/>--}}
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ $head->getTitle() }}</title>
+<meta name="description" content="{{ $head->getDescription() }}">
+<meta name="keywords" content="{{ $head->getKeywordStr() }}">
 <meta http-equiv="content-language" content="vie"/>
-<link rel="alternate" href="/template/furniture03/webroot/" hreflang="vie"/>
+<link rel="icon" type="image/png" sizes="192x192"  href="{{ asset('assets/favicon/android-icon-192x192.png') }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ asset('assets/favicon/favicon-32x32.png') }}">
+<link rel="icon" type="image/png" sizes="96x96" href="{{ asset('assets/favicon/favicon-96x96.png') }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ asset('assets/favicon/favicon-16x16.png') }}">
 
 <x-head.meta-graph :headMetaGraph="$head->getHeadMetaGraphFactory()" />
 
@@ -15,14 +18,13 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/owl.carousel.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/jquery.gritter.min.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style-menu.css') }}"/>
-{{--<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fonts_vnsitecss.css') }}"/>--}}
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/font-awesome/css/all.min.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/fontello.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main2.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main.css') }}?v=20211219"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/main2.css') }}?v=20211219"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style-theme.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/page.css') }}"/>
-<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/css_custom.css') }}"/>
+<link rel="stylesheet" type="text/css" href="{{ asset('assets/css/css_custom.css') }}?v=20211219"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/mightyslider/mightyslider.css') }}"/>
 <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/mightyslider/mightyslider.animate.css') }}"/>
 <!--  CSS -->

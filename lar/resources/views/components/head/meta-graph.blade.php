@@ -4,4 +4,4 @@
 <meta property="og:image"
       content="{{ $headMetaGraph->getOgImage() }}"/>
 <meta content="{{ $headMetaGraph->getDescription() }}" name="description"/>
-<meta content="{{ $headMetaGraph->getKeywords() }}" name="keywords"/>
+<meta content="{{ $headMetaGraph->getKeywordStr() }}" name="keywords"/>

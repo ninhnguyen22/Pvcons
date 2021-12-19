@@ -2,8 +2,8 @@
 
 return [
     'project_url' => env('APP_URL'),
-    'project_name' => 'PBS',
-    'description' => 'PBS description',
+    'project_name' => 'PvCons',
+    'description' => 'PvCons description',
     'image' => env('APP_URL') . '/abc.png',
-    'keywords' => 'PBS',
+    'keywords' => ['PvCons'],
 ];

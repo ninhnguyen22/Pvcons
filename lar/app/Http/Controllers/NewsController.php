@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Repositories\Contracts\BreadcrumbRepositoryInterface;
 use App\Repositories\Contracts\CategoryRepositoryInterface;
+use App\Repositories\Contracts\FrameRepositoryInterface;
 use App\Repositories\Contracts\NewsRepositoryInterface;
 use Illuminate\Support\Str;
 
@@ -11,14 +12,18 @@ class NewsController extends BaseController
 {
     public CategoryRepositoryInterface $categoryRepository;
     public NewsRepositoryInterface $newsRepository;
+    public FrameRepositoryInterface $frameRepository;
 
     public function __construct(
+        FrameRepositoryInterface $frameRepository,
         BreadcrumbRepositoryInterface $breadcrumbRepository,
         CategoryRepositoryInterface $categoryRepository,
         NewsRepositoryInterface $newsRepository
-    ) {
+    )
+    {
         parent::__construct();
 
+        $this->frameRepository = $frameRepository;
         $this->breadcrumbRepository = $breadcrumbRepository;
         $this->categoryRepository = $categoryRepository;
         $this->newsRepository = $newsRepository;
@@ -31,6 +36,9 @@ class NewsController extends BaseController
             abort(404);
         }
 
+        /* Meta setting */
+        $this->setMetaHead('Tin Tức PvCons', 'Tất cả tin tức của PvCons', ['Tin Tức']);
+        /* Breadcrumb */
         $this->categoryBreadcrumbs(['name' => 'Tin Tức', 'url' => '/tin-tuc']);
 
         $categories = $this->newsRepository->getNewsCategories();
@@ -46,6 +54,13 @@ class NewsController extends BaseController
             abort(404);
         }
 
+        /* Meta setting */
+        $this->setMetaHead(
+            'PvCons - danh mục ' . $category->name,
+            'PvCons - danh mục tin tức: ' . $category->name,
+            ['Danh mục tin tức', $category->name]
+        );
+        /* Breadcrumb */
         $this->categoryBreadcrumbs([
             'name' => $category->name,
             'url' => route('news.category', ['categorySlug' => Str::slug($category->name), 'category' => $categoryId])
@@ -64,6 +79,15 @@ class NewsController extends BaseController
             abort(404);
         }
         $category = $product->newsCategory;
+
+        /* Meta setting */
+        $this->setMetaHead(
+            'PvCons -  ' . $product->name,
+            'PvCons - tin tức: '. $product->name,
+            ['Tin tức', $product->name]
+        );
+
+        /* Breadcrumb */
         $this->detailBreadcrumbs(
             ['name' => $category->name, 'url' => route('news.category', ['categorySlug' => Str::slug($category->name), 'category' => $category->id])],
             [

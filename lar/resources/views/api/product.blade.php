@@ -3,7 +3,7 @@
         <div class="col-md-4 col-sm-4 col-xs-12  list-item box-blogs">
             <div class="border item-blogs clearfix">
                 <div class="img-blogs">
-                    <a class="img-news" href="/spa-hb-hai-phong.html">
+                    <a class="img-news" href="{{ route('product.detail', ['product' => $product->id, 'productSlug' => Str::slug($product->name)]) }}">
                         <img
                             class="lazyload"
                             data-src="{{ Storage::disk('admin')->url($product->image) }}"
@@ -12,7 +12,7 @@
                 </div>
                 <div class="info">
                     <h2 class="title-blogs-item">
-                        <a href="/spa-hb-hai-phong.html">{{ $product->name }}</a>
+                        <a href="{{ route('product.detail', ['product' => $product->id, 'productSlug' => Str::slug($product->name)]) }}">{{ $product->name }}</a>
                     </h2>
                     <p class="more-blogs">
                         <span class="time">

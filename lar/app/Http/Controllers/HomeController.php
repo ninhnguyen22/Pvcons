@@ -10,7 +10,6 @@ use App\Repositories\ServiceRepository;
 
 class HomeController extends BaseController
 {
-    protected FrameRepositoryInterface $frameRepository;
     protected HomeRepositoryInterface $homeRepository;
     protected CategoryRepositoryInterface $categoryRepository;
     protected BenefitRepositoryInterface $benefitRepository;

@@ -24,12 +24,25 @@ class FrameRepository extends BaseRepository implements FrameRepositoryInterface
         $this->headFactory = new HeadFactory();
     }
 
-    /**
-     * @param string $title
-     */
     public function setHeadTitle(string $title)
     {
-        $this->headFactory->setTitle($title);
+        if (!is_null($title)) {
+            $this->headFactory->setTitle($title);
+        }
+    }
+
+    public function setHeadDescription(string $description)
+    {
+        if (!is_null($description)) {
+            $this->headFactory->setDescription($description);
+        }
+    }
+
+    public function setHeadKeywords(array $keywords)
+    {
+        if (!empty($keywords)) {
+            $this->headFactory->setKeywords($keywords);
+        }
     }
 
     public function getHeadFactory(): HeadFactory

@@ -35,15 +35,15 @@
         <div class="container">
             <div class="row">
 
-                <div class="col-sm-2 col-xs-2">
+                <div class="col-sm-2 col-xs-6">
                     <div class="navbar-header">
-                        <a class="logo" href="#">
+                        <a class="logo" href="/">
                             <img src="{{ asset('/assets/images/logo.png') }}" alt="Logo"/>
                         </a>
                     </div>
                 </div>
 
-                <div class="col-sm-10 col-xs-10">
+                <div class="col-sm-10 col-xs-6">
                     <div class="nav_main nav-right  ">
                         <div class="hidden-xs">
                             <nav id="navigation">

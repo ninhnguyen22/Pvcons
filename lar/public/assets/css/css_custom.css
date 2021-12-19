@@ -124,7 +124,7 @@ body{
   margin-top: -10px;
 }
 #header .logo img{
-  height: 70px;
+  height: 86px;
   padding-bottom: 5px !important;
   padding: 0px;
 }
@@ -787,4 +787,10 @@ body{
 
 .carousel-inner img {
     margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+    #header-row-8 {
+        padding: 15px 5px;
+    }
 }

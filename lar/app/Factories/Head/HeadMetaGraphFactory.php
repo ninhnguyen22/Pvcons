@@ -9,7 +9,7 @@ class HeadMetaGraphFactory
     private string $ogDescription;
     private string $ogImage;
     private string $description;
-    private string $keywords;
+    private array $keywords;
 
     public function getOgUrl()
     {
@@ -39,6 +39,12 @@ class HeadMetaGraphFactory
     public function getKeywords()
     {
         return $this->keywords ?? config('common.keywords');
+    }
+
+    public function getKeywordStr()
+    {
+        $keywords = $this->getKeywords();
+        return implode(', ', $keywords);
     }
 
     public function setOgUrl(string $url)

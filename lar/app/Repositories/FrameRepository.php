@@ -45,6 +45,11 @@ class FrameRepository extends BaseRepository implements FrameRepositoryInterface
         }
     }
 
+    public function setHeadMetaGraph($headMetaGraphFactory)
+    {
+        $this->headFactory->setHeadMetaGraphFactory($headMetaGraphFactory);
+    }
+
     public function getHeadFactory(): HeadFactory
     {
         return $this->headFactory;

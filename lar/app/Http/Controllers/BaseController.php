@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Factories\Head\HeadMetaGraphFactory;
 use App\Repositories\Contracts\BreadcrumbRepositoryInterface;
 use App\Repositories\Contracts\FrameRepositoryInterface;
 
@@ -29,11 +30,23 @@ class BaseController extends Controller
             ->setBreadcrumbs($detail['name'], $detail['url']);
     }
 
-    protected function setMetaHead($title, $description, $keywords = [])
+    protected function setMetaHead($title, $description, $keywords = [], $image = null)
     {
         $this->frameRepository->setHeadTitle($title);
         $this->frameRepository->setHeadDescription($description);
         $this->frameRepository->setHeadKeywords($keywords);
+
+        // Meta
+        $headMetaGraphFactory = new HeadMetaGraphFactory();
+        $headMetaGraphFactory->setOgTitle($title)
+            ->setOgUrl(request()->url())
+            ->setDescription($description)
+            ->setOgDescription($description)
+            ->setKeywords($keywords);
+        if ($image) {
+            $headMetaGraphFactory->setOgImage($image);
+        }
+        $this->frameRepository->setHeadMetaGraph($headMetaGraphFactory);
     }
 
 }

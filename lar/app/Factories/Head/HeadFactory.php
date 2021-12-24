@@ -57,6 +57,11 @@ class HeadFactory
         return $this->headMetaGraphFactory;
     }
 
+    public function setHeadMetaGraphFactory(HeadMetaGraphFactory $headMetaGraphFactory)
+    {
+        $this->headMetaGraphFactory = $headMetaGraphFactory;
+    }
+
     public function resolveHeadMetaGraphFactory()
     {
         $this->headMetaGraphFactory = new HeadMetaGraphFactory();

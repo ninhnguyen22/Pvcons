@@ -15,4 +15,6 @@ interface FrameRepositoryInterface extends BaseRepositoryInterface
     public function getHeadFactory(): HeadFactory;
 
     public function getNewsFooter();
+
+    public function setHeadMetaGraph($headMetaGraphFactory);
 }

@@ -77,7 +77,7 @@ class HeadMetaGraphFactory
         return $this;
     }
 
-    public function setKeywords(string $keywords)
+    public function setKeywords(array $keywords)
     {
         $this->keywords = $keywords;
         return $this;

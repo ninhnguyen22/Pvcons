@@ -6,6 +6,7 @@ use App\Repositories\Contracts\BreadcrumbRepositoryInterface;
 use App\Repositories\Contracts\CategoryRepositoryInterface;
 use App\Repositories\Contracts\FrameRepositoryInterface;
 use App\Repositories\Contracts\NewsRepositoryInterface;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 
 class NewsController extends BaseController
@@ -84,7 +85,8 @@ class NewsController extends BaseController
         $this->setMetaHead(
             'PvCons -  ' . $product->name,
             'PvCons - tin tức: '. $product->name,
-            ['Tin tức', $product->name]
+            ['Tin tức', $product->name],
+            Storage::disk('admin')->url($product->image)
         );
 
         /* Breadcrumb */

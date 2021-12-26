@@ -42,10 +42,10 @@ class ContactController extends AdminController
         $grid->column('phone', __('Điện thoại'));
         $grid->column('status', __('Trạng thái'))->editable('select', $this->getStatusLabels());
         $grid->column('mail', __('Email'));
-        $grid->column('replyLink', __('Trả lời'))->display(function () {
+        /*$grid->column('replyLink', __('Trả lời'))->display(function () {
             $url = route('admin.contact-reply.create') . '?ct=' . $this->id;
             return "<a href='{$url}'>Mail</a>";
-        });;
+        });*/
         $grid->column('content', __('Nội dung'));
         $grid->column('created_at', __('Ngày gửi'));
 

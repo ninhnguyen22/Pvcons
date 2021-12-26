@@ -12,11 +12,21 @@ use Spatie\Enum\Laravel\Enum;
  */
 final class ContactStatusEnum extends Enum
 {
-    protected static function values(): \Closure
+   /* protected static function values(): \Closure
     {
         return function (string $name) {
             return mb_strtolower($name);
         };
+    }*/
+
+    protected static function values()
+    {
+        return [
+            'OPEN' => 0,
+            'FEEDBACK' => 1,
+            'RESOLVED' => 2,
+            'CANCEL' => 3,
+        ];
     }
 
     public static function toFormOptions(): array
